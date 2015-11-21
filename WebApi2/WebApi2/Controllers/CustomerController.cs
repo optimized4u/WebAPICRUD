@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using WebApi2;
 
 namespace WebApi2.Controllers
 {
@@ -17,7 +12,12 @@ namespace WebApi2.Controllers
         private PurchaseOrderDBEntities db = new PurchaseOrderDBEntities();
 
         // GET: api/Customer
-        public IQueryable<Customers> GetCustomers()
+        //public IQueryable<Customers> GetCustomers()
+        //{
+        //    return db.Customers;
+        //}
+        [Route("api/customers")]
+        public IQueryable GetCustomers()
         {
             return db.Customers;
         }
