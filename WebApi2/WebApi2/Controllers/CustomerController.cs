@@ -11,13 +11,9 @@ namespace WebApi2.Controllers
     {
         private PurchaseOrderDBEntities db = new PurchaseOrderDBEntities();
 
-        // GET: api/Customer
-        //public IQueryable<Customers> GetCustomers()
-        //{
-        //    return db.Customers;
-        //}
-        [Route("api/customers")]
-        public IQueryable GetCustomers()
+        // GET: api/Customers
+        [Route("api/Customers")]
+        public IQueryable<Customers> GetCustomers()
         {
             return db.Customers;
         }
